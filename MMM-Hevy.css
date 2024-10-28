@@ -5,11 +5,14 @@
 
 .workout-list .day {
   margin: 4px;
-  border-radius: 20px;
-  text-align: center;
+  height: 30px;
+  width: 30px;
   background-color: #515761;
+  border-radius: 50%;
+  text-align: center;
   font-weight: bold;
   flex: 1;
+  font-size: 20px;
 }
 
 .workout-list .beasted {
