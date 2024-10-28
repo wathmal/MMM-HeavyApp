@@ -1,22 +1,21 @@
 const NodeHelper = require("node_helper");
-// load the SVGs
-// const bodyFrontSvg = require("./svgs/body-front.svg");
-// const bodyBackSvg = require("./svgs/body-back.svg");
 
-// Should have a getSVG method
-// returns the SVG painted
-
-// Should render in UI
-
+const MUSCLE_NAMES = {
+	TRICEPS: "triceps",
+	DELTS: "delts",
+	CALF: "calf",
+	HAMSTRINGS: "hamstrings",
+	GLUTES: "glutes",
+}
 
 module.exports = NodeHelper.create({
 	start: function () {
-		console.log('MMM-HeavyApp helper started...');
+		console.log('MMM-Hevy helper started...');
 	},
 
 	getWorkoutData: function () {
 		// Call the API and get the data
-
+		return {}
 	},
 
 	socketNotificationReceived: function (notification, payload) {
@@ -26,6 +25,4 @@ module.exports = NodeHelper.create({
 
 		}
 	}
-
-
 });

@@ -1,0 +1,19 @@
+.workout-list {
+  display: flex;
+  margin-top: 10px;
+}
+
+.workout-list .day {
+  margin: 4px;
+  border-radius: 20px;
+  text-align: center;
+  background-color: #515761;
+  font-weight: bold;
+  flex: 1;
+}
+
+.workout-list .beasted {
+  background-color: #C25F60;
+  color: white;
+}
+
