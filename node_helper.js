@@ -8,15 +8,6 @@ const Cache = new NodeCache({stdTTL: 172800});
 module.exports = NodeHelper.create({
 	start: function () {
 		console.log('MMM-Hevy helper started...');
-
-		// Run getWorkoutTemplateAndCache immediately
-		// this.getWorkoutTemplateAndCache();
-		//
-		// // Run getWorkoutTemplateAndCache every 2 day
-		// setInterval(() => {
-		// 	this.getWorkoutTemplateAndCache();
-		// }, 2 * 24 * 60 * 60 * 1000); // 24 hours in milliseconds
-
 	},
 
 	getWorkoutData: async function (apiKey) {

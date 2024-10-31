@@ -1,7 +1,7 @@
 Module.register("MMM-Hevy", {
 	// Default module config.
 	defaults: {
-		updateInterval: 60 * 60 * 1000, // every 60 minutes
+		updateInterval: 30 * 60 * 1000, // every 30 minutes
 		height: "200px",
 		heavyApiKey: "",
 		primaryColor: "rgba(194, 95, 96, 1)",
