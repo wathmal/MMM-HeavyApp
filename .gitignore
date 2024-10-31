@@ -1,3 +1,5 @@
 /hevy.http
 /test.js
 /samples/
+/node_modules/
+.idea/
