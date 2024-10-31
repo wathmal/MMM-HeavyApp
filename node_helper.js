@@ -134,9 +134,6 @@ module.exports = NodeHelper.create({
 			workoutDays: []
 		};
 
-		// Need to filter out workouts for this week only
-		const weekStart = new Date()
-
 		try {
 			// Check if the cache is empty
 			if (Cache.keys().length === 0) {
@@ -147,7 +144,8 @@ module.exports = NodeHelper.create({
 
 			const data = await workoutData.json();
 			let workouts = data.workouts;
-			// TODO: Filter out workouts for this week
+
+			// Filter out workouts for this week
 			const today = new Date();
 			const weekStart = startOfISOWeek(today);
 			const weekEnd = endOfISOWeek(today);
