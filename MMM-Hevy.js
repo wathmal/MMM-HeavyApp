@@ -35,17 +35,6 @@ Module.register("MMM-Hevy", {
 		return wrapper;
 	},
 
-	notificationReceived: function (notification, payload, sender) {
-
-
-		if (notification === "MODULE_DOM_CREATED") {
-			Log.log("DOM created");
-
-		}
-
-	},
-
-
 	getStyles: function () {
 		return ["MMM-Hevy.css"];
 	},
@@ -68,7 +57,7 @@ Module.register("MMM-Hevy", {
 		}
 	},
 
-	scheduleUpdate: function (delay) {
+	scheduleUpdate: function () {
 		const nextLoad = this.config.updateInterval;
 		const self = this;
 		setTimeout(function () {
