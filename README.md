@@ -12,4 +12,42 @@ Hevy is a free weight lifting workout tracker that lets athletes log their worko
 
 ## Installing
 
+Navigate to the modules folder and clone this repo (like other modules).
+
+```bash
+cd MagicMirror/modules
+git clone https://github.com/wathmal/MMM-Hevy.git
+```
+
+Install the dependencies
+
+```bash
+cd MMM-Hevy
+npm install
+```
+
+Grab the API key from Hevy. Visit https://hevy.com/settings?developer and Generate a new API key.
+
+Add the configs to `MagicMirror/config/config.js` file
+Sample config:
+
+```js
+{
+    module: "MMM-Hevy",
+    position: "top_right",
+    header: "Heavy",
+    config: {
+      heavyApiKey: "YOUR_HEVY_API_KEY"
+    }
+}
+```
+
+Restart your MagicMirror.
+
+## Configuration Options
+
+
+
+
+
 
