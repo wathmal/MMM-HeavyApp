@@ -1,10 +1,11 @@
 Module.register("MMM-Hevy", {
 	// Default module config.
 	defaults: {
-		text: "Hello World!",
 		updateInterval: 60 * 60 * 1000, // every 60 minutes
 		height: "200px",
-		heavyApiKey: "abc123"
+		heavyApiKey: "",
+		primaryColor: "rgba(194, 95, 96, 1)",
+		secondaryColor: "rgba(194, 95, 96, 0.5)"
 	},
 
 
@@ -83,16 +84,26 @@ Module.register("MMM-Hevy", {
 		svg.style.width = "100%";
 		svg.style.height = this.config.height;
 
+		const primary = this.workoutData.primary || [];
+		const secondary = this.workoutData.secondary || [];
+		const self = this;
 		svg.onload = function () {
 			const svgDoc = svg.contentDocument;
-			const abdomenPaths = svgDoc.getElementsByClassName("abdomen");
-			for (let i = 0; i < abdomenPaths.length; i++) {
-				abdomenPaths[i].style.fill = "#C25F60";
-			}
+			self.colorMuscles(svgDoc, secondary, self.config.secondaryColor);
+			self.colorMuscles(svgDoc, primary, self.config.primaryColor);
 		};
 
 
 		return svg;
+	},
+
+	colorMuscles: function (svgDoc, muscles, color) {
+		for (let muscle of muscles) {
+			const musclePaths = svgDoc.getElementsByClassName(muscle);
+			for (let i = 0; i < musclePaths.length; i++) {
+				musclePaths[i].style.fill = color;
+			}
+		}
 	},
 
 	getBottomSvgElement: function () {
@@ -101,6 +112,18 @@ Module.register("MMM-Hevy", {
 		svg2.data = "/MMM-Hevy/body-back.svg";
 		svg2.style.width = "100%";
 		svg2.style.height = this.config.height;
+
+		const primary = this.workoutData.primary || [];
+		const secondary = this.workoutData.secondary || [];
+		const self = this;
+		svg2.onload = function () {
+			const svgDoc = svg2.contentDocument;
+
+			self.colorMuscles(svgDoc, secondary, self.config.secondaryColor);
+			self.colorMuscles(svgDoc, primary, self.config.primaryColor);
+
+		};
+
 		return svg2;
 	},
 
@@ -109,6 +132,7 @@ Module.register("MMM-Hevy", {
 		wrapper.className = "workout-list";
 		wrapper.style.display = "flex";
 
+		const workoutDays = this.workoutData.workoutDays || [];
 		// 7 days as M T W T F S S
 
 		const days = ["M", "T", "W", "T", "F", "S", "S"];
@@ -116,7 +140,8 @@ Module.register("MMM-Hevy", {
 			const day = document.createElement("div");
 			// set class for styling
 			day.className = "day";
-			if (i === 0) {
+			// check if the day is a workout day
+			if (workoutDays.includes(i + 1)) {
 				day.className = "day beasted";
 			}
 			day.innerHTML = days[i];
