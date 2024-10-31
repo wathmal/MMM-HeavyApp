@@ -4,7 +4,7 @@ Module.register("MMM-Hevy", {
 		text: "Hello World!",
 		updateInterval: 60 * 60 * 1000, // every 60 minutes
 		height: "200px",
-		heavyApiKey: ""
+		heavyApiKey: "abc123"
 	},
 
 

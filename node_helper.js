@@ -1,13 +1,5 @@
 const NodeHelper = require("node_helper");
 
-const MUSCLE_NAMES = {
-	TRICEPS: "triceps",
-	DELTS: "delts",
-	CALF: "calf",
-	HAMSTRINGS: "hamstrings",
-	GLUTES: "glutes",
-}
-
 module.exports = NodeHelper.create({
 	start: function () {
 		console.log('MMM-Hevy helper started...');
