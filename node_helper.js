@@ -190,7 +190,7 @@ module.exports = NodeHelper.create({
 	socketNotificationReceived: function (notification, payload) {
 		if (notification === 'GET_HEAVY_DATA') {
 
-			const data = this.getData(payload.heavyApiKey).then((data) => {
+			this.getData(payload.heavyApiKey).then((data) => {
 				this.sendSocketNotification('HEAVY_DATA_RES', data);
 			}).catch((error) => {
 				console.error(error);
