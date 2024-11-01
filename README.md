@@ -31,20 +31,14 @@ Grab the API key from Hevy. Visit https://hevy.com/settings?developer and Genera
 Add the configs to `MagicMirror/config/config.js` file
 Sample config:
 
-```js
+```
 {
-  module: "MMM-Hevy",
-    position
-:
-  "top_right",
-    header
-:
-  "Heavy",
-    config
-:
-  {
-    heavyApiKey: "YOUR_HEVY_API_KEY"
-  }
+    module: "MMM-Hevy",
+    position:"top_right",
+    header:"Heavy",
+    config:{
+        heavyApiKey: "YOUR_HEVY_API_KEY"
+    }
 }
 ```
 
