@@ -4,7 +4,6 @@ Module.register("MMM-Hevy", {
 		updateInterval: 15 * 60 * 1000, // every 15 minutes
 		height: "200px",
 		heavyApiKey: "",
-		header: "Hevy",
 		primaryColor: "rgba(194, 95, 96, 1)",
 		secondaryColor: "rgba(194, 95, 96, 0.5)"
 	},
@@ -42,7 +41,7 @@ Module.register("MMM-Hevy", {
 	},
 
 	getHeader: function () {
-		return this.defaults.header || 'Hevy';
+		return this.data.header || 'Hevy';
 	},
 
 

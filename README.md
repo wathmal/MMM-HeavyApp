@@ -63,7 +63,6 @@ Restart your MagicMirror.
 | updateInterval | How often to update (in milliseconds). This will call Hevy GET /workout Api         | 15 * 60 * 1000           |
 | height         | Height of the module in pixels                                                      | "200px"                  |
 | heavyApiKey    | API key from Hevy. Visit https://hevy.com/settings?developer to get the key         | ""                       |
-| header         | Header of the module                                                                | "Hevy"                   |
 | primaryColor   | Color for primary targeted muscles. Can be anything which supports SVG `fill` prop. | "rgba(194, 95, 96, 1)"   |
 | secondaryColor | Color for secondary targetted muscles. Same as primaryColor.                        | "rgba(194, 95, 96, 0.5)" |
 
