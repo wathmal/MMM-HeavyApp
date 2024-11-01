@@ -1,9 +1,10 @@
 Module.register("MMM-Hevy", {
 	// Default module config.
 	defaults: {
-		updateInterval: 30 * 60 * 1000, // every 30 minutes
+		updateInterval: 15 * 60 * 1000, // every 15 minutes
 		height: "200px",
 		heavyApiKey: "",
+		header: "Hevy",
 		primaryColor: "rgba(194, 95, 96, 1)",
 		secondaryColor: "rgba(194, 95, 96, 0.5)"
 	},
@@ -13,6 +14,7 @@ Module.register("MMM-Hevy", {
 		this.workoutData = [];
 		this.getData();
 		this.scheduleUpdate();
+		this.updateDom();
 	},
 
 	// Override dom generator.
@@ -40,7 +42,7 @@ Module.register("MMM-Hevy", {
 	},
 
 	getHeader: function () {
-		return 'Hevy';
+		return this.defaults.header || 'Hevy';
 	},
 
 
@@ -49,18 +51,20 @@ Module.register("MMM-Hevy", {
 	},
 
 	socketNotificationReceived: function (notification, payload) {
-		if (notification === "HEAVY_DATA_RES") {
+		const self = this;
 
-			console.log(payload)
-			this.workoutData = payload;
-			this.updateDom();
+		if (notification === "HEAVY_DATA_RES") {
+			console.log("MMM-Hevy received data from node_helper");
+			self.workoutData = payload;
+			self.updateDom(500);
 		}
 	},
 
 	scheduleUpdate: function () {
+		console.log("MMM-Hevy scheduling update with interval: ", this.config.updateInterval);
 		const nextLoad = this.config.updateInterval;
 		const self = this;
-		setTimeout(function () {
+		setInterval(function () {
 			self.getData();
 		}, nextLoad);
 	},

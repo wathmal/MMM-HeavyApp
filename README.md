@@ -33,12 +33,18 @@ Sample config:
 
 ```js
 {
-    module: "MMM-Hevy",
-    position: "top_right",
-    header: "Heavy",
-    config: {
-      heavyApiKey: "YOUR_HEVY_API_KEY"
-    }
+  module: "MMM-Hevy",
+    position
+:
+  "top_right",
+    header
+:
+  "Heavy",
+    config
+:
+  {
+    heavyApiKey: "YOUR_HEVY_API_KEY"
+  }
 }
 ```
 
@@ -46,8 +52,29 @@ Restart your MagicMirror.
 
 ## Configuration Options
 
+[//]: # (		updateInterval: 60 * 1000, // every 30 minutes)
 
+[//]: # (		height: "200px",)
 
+[//]: # (		heavyApiKey: "",)
 
+[//]: # (		header: "Hevy",)
+
+[//]: # (		primaryColor: "rgba&#40;194, 95, 96, 1&#41;",)
+
+[//]: # (		secondaryColor: "rgba&#40;194, 95, 96, 0.5&#41;")
+
+| Option         | Description                                                                         | Default                  |
+|----------------|-------------------------------------------------------------------------------------|--------------------------|
+| updateInterval | How often to update (in milliseconds). This will call Hevy GET /workout Api         | 15 * 60 * 1000           |
+| height         | Height of the module in pixels                                                      | "200px"                  |
+| heavyApiKey    | API key from Hevy. Visit https://hevy.com/settings?developer to get the key         | ""                       |
+| header         | Header of the module                                                                | "Hevy"                   |
+| primaryColor   | Color for primary targeted muscles. Can be anything which supports SVG `fill` prop. | "rgba(194, 95, 96, 1)"   |
+| secondaryColor | Color for secondary targetted muscles. Same as primaryColor.                        | "rgba(194, 95, 96, 0.5)" |
+
+## Credits
+
+- https://github.com/diabeatz96/FalseStory I used the muscle split SVG from this project.
 
 
